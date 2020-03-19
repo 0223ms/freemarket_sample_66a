@@ -70,6 +70,7 @@ Things you may want to cover:
 |expiration_month|integer|null: false|
 |expiration_year|integer|null: false|
 |security_code|integer|null: false|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -86,8 +87,8 @@ Things you may want to cover:
 |delivery_way|string|null: false|
 |delivery_days|string|null: false|
 |price|integer|null: false|
-|buyer_id|integer||
-|saller_id|integer||
+|buyer_id|integer|foreign_key: true|
+|saller_id|integer|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :category
@@ -113,6 +114,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :product
@@ -122,6 +125,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
+|product|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :product, inverse_of: :images
 
