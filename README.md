@@ -24,7 +24,6 @@ Things you may want to cover:
 * ...
 
 
-
 # DB設計
 ## ER図
 [freemarket_sample_66a_ER図](https://www.lucidchart.com/invitations/accept/970a5ef6-1e18-40ed-8379-9ae8dcf671d5)
@@ -146,4 +145,5 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 ### Association
+- has_many :products
 - has_many :products
