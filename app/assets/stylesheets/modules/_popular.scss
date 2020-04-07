@@ -1,0 +1,126 @@
+.main-top {
+  background-color: #eeeeee;
+  height: 390px;
+  width: 1440px;
+  &__banner {
+    width: 100%;  
+  }
+}
+
+.main-popular {
+  height: 90px;
+  width: 1440px;
+  padding: 50px 0 30px;
+  color: #333333;
+  font-weight: 600;
+  text-align: center;
+  &__title {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  &__tags {
+    display: inline-block;
+    background-color: #efefef;
+    color: #333333;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 16px;
+    margin-right: 5px;
+    border-radius: 15px;
+  }
+}
+
+.main-new-arrival {
+  background-color: #f5f5f5;
+  height: 490px;
+  padding: 42px 210px 100px;
+  position: relative;
+  :hover {
+    outline: solid 1px #0095ee;
+  }
+  &__category {
+    color: #333333;
+    font-size: 24px;
+    font-weight: 600;
+    width: 929px;
+    height: 33px;
+    float: left;
+    pointer-events: none;
+    &__more {
+      width: 91px;
+      color: #0095ee;
+      font-size: 14px;
+      font-weight: 600;
+      top: 55px;
+      right: 209px;
+      float: right;
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+  &__product {
+    background-color: #ffffff;
+    height: 252px;
+    width: 188px;
+    position: relative;
+    font-weight: lighter;
+    float: left;
+    margin: 6px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    &--image {
+      height: 188px;
+      overflow: hidden;
+      pointer-events: none;
+      &__ribbon-sm > div {
+        font-size: 20px;
+        color: white;
+        position: absolute;
+        left: 0;
+        top: 18px;
+        z-index: 2;
+        transform: rotate(-45deg);
+        letter-spacing: 2px;
+        font-weight: 600;
+        pointer-events: none;
+      }
+      &__ribbon-sm::after {
+        border-width: 80px 80px 0 0;
+        border-color: #ea352d transparent transparent transparent;
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        pointer-events: none;
+      }
+    }
+    &--price {
+      background: rgba(0,0,0,.4);
+      height: 28px;
+      min-width: 40px;
+      line-height: 28px;
+      color: #ffffff;
+      font-size: 17px;
+      padding: 0 12px;
+      border-radius: 0 14px 14px 0;
+      position: absolute;
+      bottom: 73px;
+      pointer-events: none;
+    }
+    &--name {
+      color: #333333;
+      height: 40px;
+      overflow: hidden;
+      font-size: 14px;
+      letter-spacing: .02em;
+      padding: 5px 10px;
+      margin-top: 5px;
+      pointer-events: none;
+    } 
+  }
+}
