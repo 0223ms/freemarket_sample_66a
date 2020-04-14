@@ -1,0 +1,143 @@
+.containt
+  .containt__header
+    = link_to root_path, class: "containt__header__logo" do
+      = image_tag "logo.png", class: "containt__header__logo__img"
+
+.containt__main
+  .containt__main__container
+      
+    .containt__main__container__second__name
+      出品画像
+      %span.containt__main__container--gazo  必須  
+    
+    
+    .containt__main__container__inner 
+      最大10枚までアップロードできます
+        
+    .image-content
+      %pre.label-text
+        .fas.fa-camera{class: "exhibit__btn--icon"}
+        ドラッグアンドドロップ
+        またはクリックしてファイルをアップロード    
+
+
+  .containt__main__container__second
+    .containt__main__container__second__name
+      商品名
+      %span.containt__main__container--gazo  必須
+    .product-name   
+      =text_field :name,'',class:'product-name__field',placeholder:"商品名（必須 40文字まで）"  
+
+
+    .containt__main__container__second__name
+      商品の説明
+      %span.containt__main__container--gazo  必須
+    .product-name__field__2   
+      =text_area :content,'',class:'product-name__field__2--content',placeholder:"商品の説明（必須 1000文字以内）"  
+
+   
+  .containt__main__container__third 
+    .containt__main__container__second__name
+      カテゴリー
+      %span.containt__main__container--gazo  必須
+    =select :category_id, "", {選択してください: "---"},{},{class: "containt__main__container__third__list"}
+    .fas.fa-chevron-down.fa-lg.containt__icon
+
+
+    .containt__main__container__second__name
+      商品名
+      %span.containt__main__container--gazo2  任意
+    .product-name   
+      =text_field :name,'',class:'product-name__field',placeholder:"例）シャネル"    
+
+
+    .containt__main__container__second__name
+      商品の状態
+      %span.containt__main__container--gazo  必須
+    =select :category_id, "", {選択してください: "---"},{},{class: "containt__main__container__third__list"} 
+    .fas.fa-chevron-down.fa-lg.containt__icon
+
+
+
+  .containt__main__container__force
+    .containt__main__container__force__option
+      配送について
+      %span.containt__main__container__force__option__option2  ？   
+    .containt__main__container__second__name
+      配送料の負担
+      %span.containt__main__container--gazo  必須   
+    =select :category_id, "", {選択してください: "---"},{},{class: "containt__main__container__third__list"}   
+    .fas.fa-chevron-down.fa-lg.containt__icon
+
+
+    .containt__main__container__second__name
+      発送元の地域
+      %span.containt__main__container--gazo  必須   
+    =select :category_id, "", {選択してください: "---"},{},{class: "containt__main__container__third__list"}   
+    .fas.fa-chevron-down.fa-lg.containt__icon
+
+
+    .containt__main__container__second__name
+      発送までの日数
+      %span.containt__main__container--gazo  必須   
+    =select :category_id, "", {選択してください: "---"},{},{class: "containt__main__container__third__list"}   
+    .fas.fa-chevron-down.fa-lg.containt__icon
+
+  .containt__main__container__fifth
+    .containt__main__container__force__option
+      価格(￥300~9,999,999)
+      %span.containt__main__container__force__option__option2  ？  
+
+    .containt__main__container__fifth__box
+      .containt__main__container__fifth__box__option
+        販売価格
+        %span.containt__main__container__fifth__box__option--2  必須 
+      .containt__main__container__fifth__box__maney  
+        ￥
+        =text_field :price,'', class: "containt__main__container__fifth__box__maney--box2", id: "", placeholder: "例) 300", autocomplete: "off" 
+        
+    
+    .containt__main__container__fifth__box__commission
+      .containt__main__container__fifth__box__commission__up
+        販売手数料(10％)
+      .containt__main__container__fifth__box__commission__up--number
+        ー
+
+    .containt__main__container__fifth__box__commission__2
+      .containt__main__container__fifth__box__commission__2__down
+        販売利益
+      .containt__main__container__fifth__box__commission__2__down--number
+        ー
+    .containt__main__container__fifth__box__commission__3
+      = submit_tag "出品する", class: "containt__main__container__fifth__box__commission__3__exhibition"
+      = submit_tag "下書きに保存", class: "containt__main__container__fifth__box__commission__3__draft"
+      = link_to root_path  do
+        .containt__main__container__fifth__box__commission__3__back
+          もどる
+
+
+    %p.containt__main__container__inner__footer
+      禁止されている
+      %a.containt__main__container__inner__footer__1{href: ""} 行為
+      および
+      %a.containt__main__container__inner__footer__1{href: ""} 出品物
+      を必ずご確認ください。
+      %a.containt__main__container__inner__footer__1{href: ""} 偽ブランド品
+      や
+      %a.containt__main__container__inner__footer__1{href: ""} 盗品物
+      などの販売は犯罪であり、法律により処罰される可能性があります。また、出品をもちまして
+      %a.containt__main__container__inner__footer__1{href: ""} 加盟店規約
+      に同意したことになります。 
+
+.containt__foot
+  .containt__foot__footer
+    .containt__foot__footer__clearfix
+      = link_to "プライバシーポリシー", "", class: "containt__foot__footer__clearfix__text"
+      = link_to "フリマ利用規約", "", class: "containt__foot__footer__clearfix__text"
+      = link_to "特定商取引に関する表記", "", class: "containt__foot__footer__clearfix__text"
+  .containt__foot__logo    
+    = link_to root_path, class: "containt__foot__logo__position" do
+      = image_tag "logo.png", size: "80x65", class: "containt__foot__logo__position--img"
+  
+    .containt__foot__logo__text  ©︎ 2019 Fmarket
+

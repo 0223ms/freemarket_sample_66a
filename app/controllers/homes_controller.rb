@@ -4,4 +4,10 @@ class HomesController < ApplicationController
     
   end
 
+
+
+  def new
+    
+  end
+
 end

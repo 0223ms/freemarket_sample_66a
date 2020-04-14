@@ -131,7 +131,7 @@ Things you may want to cover:
 - belongs_to :product, inverse_of: :images
 
 
-## categoryテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
