@@ -1,7 +1,13 @@
 class HomesController < ApplicationController
 
   def index
-    @homes= "トップページ"
+    
+  end
+
+
+
+  def new
+    
   end
 
 end
