@@ -146,4 +146,3 @@ Things you may want to cover:
 |name|string|null: false|
 ### Association
 - has_many :products
-- has_many :products
