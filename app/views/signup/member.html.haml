@@ -1,0 +1,84 @@
+%section.conteinar
+  .header
+    .header__logo
+      = image_tag "/logo.png", alt: "Rails icon", class: "image", width: "185px", height: "49px"
+  %h2.registration  会員情報入力
+  .contents
+    = form_for(@user, url: member_signup_index_path, method: :get, html: {class: "address-form", id: "signup-form"}) do |f|
+      .address__main
+        = f.label :name, "ニックネーム", class: "address__main__label" 
+        %span.address__main__require 必須
+        = f.text_field :name, class: "address__main__input", placeholder:"例）メルカリ太郎"
+      
+      .address__main.form
+        = f.label :name, "メールアドレス", class: "address__main__label" 
+        %span.address__main__require 必須
+        = f.text_field :name, class: "address__main__input", placeholder:"PC・携帯どちらでも可"
+
+      .address__main.form
+        = f.label :name, "パスワード", class: "address__main__label" 
+        %span.address__main__require 必須
+        = f.text_field :name, class: "address__main__input", placeholder:"7文字以上の半角英数字"
+        %p.address__main__text※ 英字と数字の両方を含めて設定してください
+        %input.icon-check{ type: 'checkbox' }
+        = f.label :name, "パスワードを表示する", class: "address__main__label"
+
+      .address__main.group
+        %h3.chapter 本人確認用
+        %p.single-text
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+      .address__main.form
+        = f.label :name, "お名前（全角）", class: "address__main__label" 
+        %span.address__main__require 必須
+        .address__sub
+          = f.text_field :name, class: "address__main__input--hurf", placeholder:"例）山田"
+          = f.text_field :name, class: "address__main__input--hurf", placeholder:"例）彩"
+
+
+      .address__main.form
+        = f.label :name, "お名前カナ（全角）", class: "address__main__label" 
+        %span.address__main__require 必須
+        .address__sub
+          = f.text_field :name, class: "address__main__input--hurf", placeholder:"例）ヤマダ"
+          = f.text_field :name, class: "address__main__input--hurf", placeholder:"例）アヤ"
+
+      .address__main.form
+        = f.label :name, "生年月日", class: "address__main__label" 
+        %span.address__main__require 必須
+        .address__sub
+          = f.text_field :name, class: "address__main__input--shurf", placeholder:"--"
+          %span.birthday 年
+          = f.text_field :name, class: "address__main__input--shurf", placeholder:"--"
+          %span.birthday 月
+          = f.text_field :name, class: "address__main__input--shurf", placeholder:"--"
+          %span.birthday 日
+      %p.form__info
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+      
+      .contents__sub
+        .contents__sub__text
+          %p
+            「次へ進む」のボタンを押すことにより、
+            = link_to "利用規約", "", class: "contents__sub__text__2" 
+            に
+            %br
+            同意したものとみなします
+            = f.submit "次へ進む", class: "contents__sub__btn"
+
+          .contents__sub__right
+            %p
+              = link_to "本人情報の登録について＞", "", class: "contents__sub__right__link "
+          .contents__sub__footer
+            %p 
+              This site is protected by reCAPTCHA and the Google
+              = link_to "Privacy Policy", "", class: "contents__sub__footer__bottom"
+              and
+              = link_to "Terms of Service", "", class: "contents__sub__footer__bottom"
+              apply.
+
+
+
+
+  = render 'layouts/second_footer'
+

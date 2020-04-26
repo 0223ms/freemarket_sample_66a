@@ -5,4 +5,22 @@
 @import "modules/exhibition_btn";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "homes";
+@import "owl.carousel";
+@import "owl.theme.default";
+@import "modules/slick";
+@import "modules/slick-theme";
+@import "product/product_top";
 @import "signup";
+@import "signup_member";
+
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #0098E8;
+}
