@@ -1,0 +1,29 @@
+.single__inner {
+  padding: 0 16px 40px 16px;
+  border-bottom: 1px solid #F5F5F5;
+  &__midle {
+    padding: 24px 16px 40px 16px;
+    border-bottom: 1px solid #F5F5F5;
+  }
+  &__bottom {
+    padding: 24px 16px 40px 16px;
+  }
+}
+
+.chapter__head {
+  font-size: 14px;
+  font-weight: bold;
+  &__link {
+    color: #0099E8;
+    text-decoration: none;
+    font-size: 12px;
+  }
+}
+.chapter__bottom {
+  margin-top: 8px;
+  font-size: 12px;
+  &__link {
+    color: #0099E8;
+    text-decoration: none;
+  }
+}
