@@ -33,7 +33,7 @@
         color: #fff;
         font-size: 12px;
         vertical-align: top;
-      
+        
       }  
    }
  } 
@@ -42,6 +42,7 @@
 .containt__main__container__inner{
   padding-top: 10px;
   font-size: 8px;
+  background: #ffffff;
 }
 
 
@@ -78,6 +79,7 @@
   padding: 40px;
   &__name{
     font-size: 14px;
+    background: #ffffff;
   }
 }
 .containt__main__container--gazo2{
@@ -94,6 +96,7 @@
 
 
 .product-name{
+  background: #ffffff;
   &__field{
     width: 588px;
     height: 48px; 
@@ -101,10 +104,12 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 15px 0px 40px 0px;
+    background: #ffffff;
   }
 }
 
 .product-name__field__2{
+  background: #ffffff;
   &--content{
     width: 588px;
     height: 154px;
@@ -112,6 +117,7 @@
     padding: 13px 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background: #ffffff;
   }
 }    
 
@@ -153,6 +159,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 1.4em;
+    background: #ffffff;
     &__option2{
       margin-left: 4px;
       color: #668ad8;
@@ -173,8 +180,10 @@
     height: 58px;
     padding: 0px 0px 12px;
     display: flex;
+    background: #ffffff;
     &__option{
       width: 320px;
+      background: #ffffff;
       &--2{
         background: #ea352d;
         margin: 0 0 0 8px;
@@ -186,11 +195,13 @@
       } 
     }
     &__maney{
+      background: #ffffff;
       &--box2{
         width: 240px;
         height: 48px;
         padding: 0px 16px;
         text-align: right;
+        background: #ffffff;
       }  
     }
     &__commission{
@@ -202,11 +213,14 @@
       border-bottom: medium solid #8d8a8d;
       border-width: 0.5px;
       color: #888888;
+      background: #ffffff;
       &__up{
         width: 50%;
+        background: #ffffff;
         &--number{
           text-align: right;
           width: 100%;
+          background: #ffffff;
         }
       }
     }
@@ -217,11 +231,14 @@
       display: flex;
       align-items: center;
       color: #888888;
+      background: #ffffff;
       &__down{
         width: 50%;
+        background: #ffffff;
         &--number{
           text-align: right;
           width: 100%;
+          background: #ffffff;
         }
       }
     }
@@ -229,6 +246,7 @@
       width: 360px;
       height: 164px;
       margin: 0px 130px 32px;
+      background: #ffffff;
       &__exhibition{
         width: 360px;
         height: 48px;
@@ -250,6 +268,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
+        background: #ffffff;
       }
       
     }
@@ -260,6 +279,7 @@
 .containt__main__container__inner__footer{
   font-size: 12px;
   line-height: 1.4em;
+  background: #ffffff;
   &__1{
     color: #0099E8;
     text-decoration: none;
@@ -305,6 +325,11 @@
       font-size: 12px;
     }
   }
+}
+
+
+.image-field{
+  display:none;
 }
 
 

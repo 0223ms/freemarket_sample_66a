@@ -10,7 +10,8 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :products, only: [:index, :new, :create]
+  root 'products#index'
+  resources :products, except: :show
 
 
   resources :images, only: [:index, :new, :create]

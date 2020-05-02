@@ -16,15 +16,25 @@
       .containt__main__container__inner 
         最大10枚までアップロードできます
           
-      .image-content
-        
+      
+      = f.label :image, class: "image-content" do
         %pre.label-text
-          .fas.fa-camera{class: "exhibit__btn--icon"}
+          %i.fas.fa-camera{class: "exhibit__btn--icon"}
           ドラッグアンドドロップ
           またはクリックしてファイルをアップロード 
 
         = f.fields_for :images do |i|
+          
           = i.file_field :image, class: "image-field"
+          %input{class:"image-field", type: "file", name: "product[images_attributes][1][image]", id: "product_images_attributes_1_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][2][image]", id: "product_images_attributes_2_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][3][image]", id: "product_images_attributes_3_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][4][image]", id: "product_images_attributes_4_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][5][image]", id: "product_images_attributes_5_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][6][image]", id: "product_images_attributes_6_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][7][image]", id: "product_images_attributes_7_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][8][image]", id: "product_images_attributes_8_image"}
+          %input{class:"image-field", type: "file", name: "product[images_attributes][9][image]", id: "product_images_attributes_9_image"}
 
 
 
