@@ -12,13 +12,18 @@ Rails.application.routes.draw do
     end
   end
   
+
   resources :users do
     collection do
       get 'login'
     end
   end
+  
+  root 'products#index'
+  resources :products, except: :show
 
   resources :products, only: [:index, :new, :create]
+
 
 
   resources :images, only: [:index, :new, :create]
