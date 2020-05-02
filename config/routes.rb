@@ -2,16 +2,28 @@ Rails.application.routes.draw do
   root to: 'homes#index'
   resources :homes, only: [:new, :create]
 
-  # root to: 'products#index'
+  root to: 'products#index'
   resources :signup do
     collection do
-      get 'index'
       get 'member'
+      get 'phonenumber'
+      get 'verification'
+      get 'completed'
+    end
+  end
+  
+
+  resources :users do
+    collection do
+      get 'login'
     end
   end
   
   root 'products#index'
   resources :products, except: :show
+
+  resources :products, only: [:index, :new, :create]
+
 
 
   resources :images, only: [:index, :new, :create]
