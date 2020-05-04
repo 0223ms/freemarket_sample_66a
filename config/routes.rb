@@ -18,6 +18,13 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :mypage do
+    collection do
+      get 'credit'
+      get 'logout'
+    end
+  end
+
   resources :products, only: [:index, :new, :create]
 
 
