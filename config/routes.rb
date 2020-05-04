@@ -22,6 +22,13 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :products, except: :show
 
+  resources :mypage do
+    collection do
+      get 'credit'
+      get 'logout'
+    end
+  end
+
   resources :products, only: [:index, :new, :create]
 
 
