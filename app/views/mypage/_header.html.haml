@@ -5,18 +5,18 @@
   
     = text_field_tag :search, "", placeholder: "何かお探しですか？", class: "search-box"
     %label
-      %i.fas.fa-search.search-icon{class: "search-icon"}
+      %i.fas.fa-search.search-icon
       = submit_tag 'search', name: nil, class: "search-btn"
       
   .header-lower-left
     .header-lower-left__category
       %div.category_btn
-        %i.fas.fa-list-ul{class: "list-icon"}
+        %i.fas.fa-list-ul.list-icon
         %span.parent_category
           カテゴリーから探す
 
     .header-lower-left__brands
-      %i.fas.fa-tags{class: "tags-icon"}
+      %i.fas.fa-tags.tags-icon
       %span ブランドから探す
   .header-lower-right
     = link_to "#", class: "header-lower-right__signup" do
