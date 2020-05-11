@@ -7,7 +7,7 @@
       .registration
         会員登録完了
       .contents
-        = form_for(@user, url: root_path, method: :get, html: {class: "address-form", id: "signup-form"}) do |f|
+        = form_for(@user, url: new_user_session_path, method: :get, html: {class: "address-form", id: "signup-form"}) do |f|
           .contents__midle
             ありがとうございます。会員登録が完了しました。
              
