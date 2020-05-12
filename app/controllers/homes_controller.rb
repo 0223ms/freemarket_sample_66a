@@ -22,6 +22,11 @@ class HomesController < ApplicationController
 
   end
 
+  def show
+    @product = Product.new
+    # @product = Product.find(params[:id])
+  end
+
 
   private
   def product_params
