@@ -1,10 +1,6 @@
-
-.login-form {
+.login__form {
   width: 700px;
   margin: 0 auto;
-}
-
-.login__form {
   text-align: center;
   padding: 40px 64px;
   background: #FFFFFF;
@@ -18,16 +14,14 @@
 
 .login__input{
   padding: 10px 16px 8px;
-  margin-top: 8px;
+  margin-top: 10px;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   line-height: 1.5;
   height: 28px;
-  width: 309px;
-  text-shadow: none;
-  text-indent: 0px;
+  width: 340px;
 }
 
 .login__btn {

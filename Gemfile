@@ -43,6 +43,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -74,3 +75,4 @@ gem 'rmagick'
 gem 'active_hash'
 gem 'pry-rails'
 # gem 'therubyracer'
+gem 'pry-rails'
