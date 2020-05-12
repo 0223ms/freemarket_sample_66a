@@ -79,6 +79,7 @@
     margin-right: 11px;
     border-radius: 4px;
     text-decoration: none;
+    display: inline-block;
   }
   &__login {
     background-color: #ffffff;
@@ -96,5 +97,25 @@
   color: #0099e8;
 }
 
+.user__nav__login {
+  display: flex;
+}
 
+.login_ok {
+  font-size: 14px;
+  color: #333333;
+  text-decoration: none;
+  padding: 0 14px;
+  align-items: center;
+  display: block;
+  line-height: 3;
+}
 
+.login_i {
+  color: rgb(204, 204, 204);
+  margin-right: 10px;
+}
+
+.imgicon {
+  margin-right: 10px;
+}

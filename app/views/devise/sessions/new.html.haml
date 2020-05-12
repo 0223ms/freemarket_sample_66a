@@ -4,7 +4,7 @@
       .header__logo
         = image_tag "/logo.png", alt: "Rails icon", class: "image", width: "185px", height: "49px"
     .users
-      = form_for(@user, url: signup_index_path, method: :get, html: {class: "login-form", id: "signup-form"}) do |f|
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .login__form
           %p.login__text アカウントをお持ちでない方はこちら
           = link_to "/signup", class: "contents__btn contents__btn--login" do
@@ -20,8 +20,9 @@
             = icon('fab fa-google',  class: "contents__btn--icon")
             Googleで登録する
         .login__form
-          = f.text_field :name, class: "login__input", placeholder:"メールアドレス"
-          = f.text_field :name, class: "login__input", placeholder:"パスワード"
+          = f.text_field :email, class: "login__input", placeholder:"メールアドレス"
+          = f.password_field :password, class: "login__input", placeholder:"パスワード"
           = f.submit "ログイン", class: "login__btn"
           = link_to "パスワードをお忘れの方", "/", class: "login__password"
     = render 'layouts/second_footer'
+

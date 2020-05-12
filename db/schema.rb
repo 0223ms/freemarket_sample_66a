@@ -54,14 +54,32 @@ ActiveRecord::Schema.define(version: 20200425115228) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "nickname"
+    t.string   "phone_number",               default: "", null: false
+    t.string   "firstname",                  default: "", null: false
+    t.string   "lastname",                   default: "", null: false
+    t.string   "firstname_kana",             default: "", null: false
+    t.string   "lastname_kana",              default: "", null: false
+    t.integer  "birth_year",                              null: false
+    t.integer  "birth_month",                             null: false
+    t.integer  "birth_day",                               null: false
+    t.string   "email",                      default: "", null: false
+    t.string   "encrypted_password",         default: "", null: false
+    t.string   "destination_firstname",      default: "", null: false
+    t.string   "destination_lastname",       default: "", null: false
+    t.string   "destination_firstname_kana", default: "", null: false
+    t.string   "destination_lastname_kana",  default: "", null: false
+    t.string   "postal_code",                default: "", null: false
+    t.string   "prefectures",                default: "", null: false
+    t.string   "city",                       default: "", null: false
+    t.string   "address",                    default: "", null: false
+    t.string   "room_number",                default: "", null: false
+    t.string   "delivery_number",                         null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "name"
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
