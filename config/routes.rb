@@ -19,6 +19,27 @@ Rails.application.routes.draw do
     end
   end
   
+
+  resources :products do
+    member do
+      patch 'release'
+      patch 'suspension'
+    end
+    collection do
+      get 'category_child', defaults: { format: 'json' }
+      get 'category_grandchild', defaults: { format: 'json' }
+      get 'size', defaults: { format: 'json' }
+      get 'brand', defaults: { format: 'json' }
+      get 'delivery_way'
+    end
+  end
+
+  resources :category do
+    collection do
+      get 'new', defaults: { format: 'json' }
+    end
+  end
+  
   root 'products#index'
   resources :products, except: :show
 
