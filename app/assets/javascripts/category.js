@@ -80,7 +80,7 @@ $(function(){
   
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
-  // $(document).on('change', '#parent_category', function() {  
+  
     
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     
@@ -168,7 +168,7 @@ $(function(){
       })
       
       .done(function(sizes){
-        console.log(sizes)
+        
         $('#size_wrapper').remove(); //孫が変更された時、サイズ欄以下を削除する
         $('#brand_wrapper').remove();
 

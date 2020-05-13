@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :set_product, only: [:update, :release, :suspension]
+  before_action :set_product, only: [:destroy, :update, :release, :suspension]
 
 
   def index
@@ -125,7 +125,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    # product = Product.find(params[:id])
+    
     if product.update(product_update_params) && product.user_id == current_user.id
       redirect_to product_path(product), notice: '商品の編集が完了しました。'
     else
@@ -134,19 +134,19 @@ class ProductsController < ApplicationController
   end
 
   def release
-    # product = Product.find(params[:id])
+    
     product.update(transaction_status: "0")
     redirect_to product_path(product), notice: '出品の再開をしました。'
   end
 
   def suspension
-    # product = Product.find(params[:id])
+    
     product.update(transaction_status: "2")
     redirect_to product_path(product), notice: '出品の一旦停止をしました。'
   end
 
   def destroy
-    @product = Product.find(params[:id])
+    
     if @product.user_id == current_user.id && @product.destroy
       redirect_to root_path, notice: '商品を削除しました。'
     else
@@ -168,7 +168,7 @@ class ProductsController < ApplicationController
   end
 
   def set_product
-    product = Product.find(params[:id])
+    @product = Product.find(params[:id])
   end  
 end
 
