@@ -7,10 +7,10 @@
       .registration
         電話番号の確認
       .contents
-        = form_for(@user, url: verification_signup_index_path, method: :get, html: {class: "address-form", id: "signup-form"}) do |f|
+        = form_for(@user, url: addressinformation_signup_index_path, method: :post, html: {class: "address-form", id: "signup-form"}) do |f|
           .address__main
-            = f.label :name, "携帯電話の番号", class: "address__main__label" 
-            = f.text_field :name, class: "address__main__input", placeholder:"携帯電話の番号を入力"
+            = f.label :phone_number, "携帯電話の番号", class: "address__main__label" 
+            = f.text_field :phone_number, class: "address__main__input", placeholder:"携帯電話の番号を入力", id: "phone_number"
           %p.page 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
           = f.submit "SMSを送信する", class: "contents__sub__btn"
           %p.page ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
