@@ -2,8 +2,14 @@ class ApplicationController < ActionController::Base
   before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
 
+  protect_from_forgery with: :exception
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue404
   private
-
+    def rescue404(e)
+      @exception = e
+      render template: 'error/not_found', status: 404
+    end
+  
   def production?
     Rails.env.production?
   end

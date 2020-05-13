@@ -146,3 +146,15 @@ Things you may want to cover:
 |name|string|null: false|
 ### Association
 - has_many :products
+
+
+## sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size|string||
+|ancestry|references|null: false, foreign_key: true|
+### Association
+- has_many :products
+- has_many :category_sizes
+- has_many :categories, through: :category_sizes
+- has_ancestry
