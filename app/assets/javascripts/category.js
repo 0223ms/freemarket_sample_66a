@@ -22,7 +22,7 @@ $(function(){
                           <i class='fas fa-chevron-down fa-lg containt__main__container__inner__sell-form__select-wrap__icon'></i>
                         </div>
                       </div>`;
-                      // console.log(childSelectHtml)
+                      
     $('.containt__main__container__third__list').after(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
@@ -119,9 +119,7 @@ $(function(){
     }
   });
   // 子カテゴリー選択後のイベント
-  // $('#child_category').on('change', function(){
-  // $('#child_category').on('change', function() {  
-  // $('input.containt__main__container__inner__sell-form__select-wrap__list').on('change', function() {
+
   $('.containt__main__container__third').on('change','#child_category', function() {
     
     var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
@@ -177,88 +175,53 @@ $(function(){
         if (sizes.length != 0) {
         var insertHTML = '';
           sizes.forEach(function(size){
-            console.log(size)
             insertHTML += appendSizeOption(size);
           });
           appendSizeBox(insertHTML);
           $("#size").blur(function () {
             $(this).valid();
           });
-          console.log("こんにちは")
-          // ブランドのインクリメンタルサーチ(サイズ欄ありの場合)
-          // $(".containt__main__container__inner__sell-form__select-wrap__brand").on("keyup", function () {
-          //   var input = $(".containt__main__container__inner__sell-form__select-wrap__brand").val();
-          //   $.ajax({
-          //     type: "GET",
-          //     url: "/products/brand",
-          //     data: {
-          //       keyword: input
-          //     },
-          //     dataType: "json"
-          //   })
-          //   .done(function (brands) {
-          //     $(".brand-search-result").empty();
-          //     var array = [];
-          //     if (brands.length !== 0) {
-          //       brands.forEach(function (brand) {
-          //         const result = $.inArray(brand.id, array);
-          //         if (result === -1) {
-          //           appendBrand(brand);
-          //           $(".brand-search-result__item").on("click", function () {
-          //             var selected_brand = $(this).text();
-          //             $("#brand-search-field").val(selected_brand);
-          //             $(".brand-search-result").empty();
-          //           });
-          //         }
-          //       });
-          //     }
-          //     if (input.length === 0) {
-          //       $(".brand-search-result").empty();
-          //     }
-          //   })
-          //   .fail(function () {
-          //     alert("ブランド検索に失敗しました。");
-          //   })
-          // });
+        
+
         } 
-        // else {
-        //   appendBrandBox(); // 紐付くサイズがない場合には、ブランド入力欄のみ生成する
-        //   // ブランドのインクリメンタルサーチ(サイズ欄なしの場合)
-        //   $(".containt__main__container__inner__sell-form__select-wrap__brand").on("keyup", function () {
-        //     var input = $(".containt__main__container__inner__sell-form__select-wrap__brand").val();
-        //     $.ajax({
-        //         type: "GET",
-        //         url: "/products/brand",
-        //         data: {
-        //           keyword: input
-        //         },
-        //         dataType: "json"
-        //       })
-        //       .done(function (brands) {
-        //         $(".brand-search-result").empty();
-        //         var array = [];
-        //         if (brands.length !== 0) {
-        //           brands.forEach(function (brand) {
-        //             const result = $.inArray(brand.id, array);
-        //             if (result === -1) {
-        //               appendBrand(brand);
-        //               $(".brand-search-result__item").on("click", function () {
-        //               var selected_brand = $(this).text();
-        //               $("#brand-search-field").val(selected_brand);
-        //               $(".brand-search-result").empty();
-        //               });
-        //             }
-        //           });
-        //         }
-        //         if (input.length === 0) {
-        //           $(".brand-search-result").empty();
-        //         }
-        //       })
-        //       .fail(function () {
-        //         alert("ブランド検索に失敗しました");
-        //       })
-        //   });
-        // }
+        else {
+          appendBrandBox(); // 紐付くサイズがない場合には、ブランド入力欄のみ生成する
+          // ブランドのインクリメンタルサーチ(サイズ欄なしの場合)
+          $(".containt__main__container__inner__sell-form__select-wrap__brand").on("keyup", function () {
+            var input = $(".containt__main__container__inner__sell-form__select-wrap__brand").val();
+            $.ajax({
+                type: "GET",
+                url: "/products/brand",
+                data: {
+                  keyword: input
+                },
+                dataType: "json"
+              })
+              .done(function (brands) {
+                $(".brand-search-result").empty();
+                var array = [];
+                if (brands.length !== 0) {
+                  brands.forEach(function (brand) {
+                    const result = $.inArray(brand.id, array);
+                    if (result === -1) {
+                      appendBrand(brand);
+                      $(".brand-search-result__item").on("click", function () {
+                      var selected_brand = $(this).text();
+                      $("#brand-search-field").val(selected_brand);
+                      $(".brand-search-result").empty();
+                      });
+                    }
+                  });
+                }
+                if (input.length === 0) {
+                  $(".brand-search-result").empty();
+                }
+              })
+              .fail(function () {
+                alert("ブランド検索に失敗しました");
+              })
+          });
+        }
       })
       .fail(function(){
         alert('サイズ取得に失敗しました');
