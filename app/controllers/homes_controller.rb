@@ -22,6 +22,10 @@ class HomesController < ApplicationController
 
   end
 
+  def show
+    @product = Product.new
+  end
+
 
   private
   def product_params
