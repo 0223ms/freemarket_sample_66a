@@ -64,9 +64,8 @@ class SignupController < ApplicationController
     )
     if @user.save
       session[:id] = @user.id
-      redirect_to completed_signup_index_path
     else
-      render '/signup'
+      render :index
     end
   end
 
