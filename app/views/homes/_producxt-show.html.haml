@@ -30,11 +30,13 @@
                   %tr 
                     %th.table__item カテゴリ
                     %td.table__sub
-                      = link_to "ベビー・キッズ", "/", class: "table__sub__content"
-                      %br
-                      = link_to "ベビー服（男女兼用 〜95㎝", "/", class: "table__sub__content"
-                      %br
-                      = link_to "アウター", "/", class: "table__sub__content"
+                      =@product.category.root.name
+                      =@product.category.parent.name
+                      =@product.category.name
+
+
+
+
                   %tr 
                     %th.table__item ブランド
                     %td.table__sub 

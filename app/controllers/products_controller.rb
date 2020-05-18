@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :set_product, only: [:destroy, :update, :release, :suspension]
 
 
@@ -53,6 +53,7 @@ class ProductsController < ApplicationController
     @main_photo = @product.images[0]
     @prefecture = Prefecture.find(@product.delivery_origin.to_i)
     @category_grandchildren = @product.category
+    @product.category.name
   end
 
 
@@ -74,13 +75,15 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    # binding.pry
     if @product.valid?
+      
       @product.save
       redirect_to root_path, notice: '商品を出品しました。'
     else
       @product.images.build
       @category_parent_array = Category.where(ancestry: nil)
-      render new_product_path(@product)
+      render template: "homes/new"
     end
   end
 
@@ -163,8 +166,8 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_way, :preparatory_days, :price,
-                                    :category_id, :brand, :size_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
+                                    :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
   end
 
   def set_product

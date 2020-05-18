@@ -380,3 +380,56 @@ brand_array = [
 brand_array.each do |name|
   Brand.create!(name: name)
 end
+
+
+# Product.create(:name => 'ナイキ', :price => '2011-11-14', :user_id => 1, :create_at => 2022-22-11, :updated_at => 2023-22-30, :description => 良い商品 :condition => 非常に良い, :delivery_cost => 送料無料, :delivery_origin => 北海道, :delivery_days => 2日, :category_id => 1, :brand_id => 1, :size_id => 1, :buyer_id => 1, :saler_id => 1)
+
+
+# Product.create!(
+#    name: 'ナイキ',
+#    price: '1000',
+# user_id: user_id,
+#    create_at: 'テスト太郎',
+#    updated_at: 'テスト太郎',
+#    description: 'テスト太郎',
+#    condition: 'テスト太郎',
+#    delivery_cost: 'テスト太郎',
+#    delivery_origin: 'テスト太郎',
+#    delivery_days: 'テスト太郎',
+#    category_id: 'テスト太郎',
+#    brand_id: 'テスト太郎',
+#    size_id: 'テスト太郎',
+#    buyer_id: 'テスト太郎',
+#    saler_id: 'テスト太郎',
+# )
+
+# User.all.each do |user|
+#   user.products.create!(
+#     name: 'ナイキ',
+#     price: '1000',
+#     description: '良い商品',
+#     user_id: user.id,
+#     condition: '新品未使用',
+#     delivery_cost: '送料込み(出品者負担)',
+#     delivery_origin: '北海道',
+#     delivery_days: '1~2日で発送',
+#   )
+# end
+
+Category.all.each do |category|
+  category.products.create!(
+    category_id: 'category_id',
+  )
+end
+
+# Brand.all.each do |brand|
+#   brand.products.create!(
+#     brand_id: 'brand_id',
+#   )
+# end
+
+# Size.all.each do |size|
+#   size.products.create!(
+#     size_id: 'size_id',
+#   )
+# end
