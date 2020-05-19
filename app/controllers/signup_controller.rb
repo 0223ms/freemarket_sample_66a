@@ -65,7 +65,11 @@ class SignupController < ApplicationController
     if @user.save
       session[:id] = @user.id
     else
+
+      # render '/signup/completed'
+
       render :index
+
     end
   end
 

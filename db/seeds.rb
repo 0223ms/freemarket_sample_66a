@@ -380,3 +380,12 @@ brand_array = [
 brand_array.each do |name|
   Brand.create!(name: name)
 end
+
+
+
+
+Category.all.each do |category|
+  category.products.create!(
+    category_id: 'category_id',
+  )
+end
