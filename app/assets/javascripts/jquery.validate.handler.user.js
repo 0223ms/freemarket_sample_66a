@@ -1,9 +1,4 @@
 $(function () {  
-  // console.log("動いてる")
-  // $('#signup-form').on('submit', function(e){
-  //   console.log("Formできてる")
-  //   e.preventDefault()
-  // })
   // メソッドの定義
   var methods = {
     email: function (value, element) { // メールアドレスの正規表現 
@@ -33,7 +28,6 @@ $(function () {
   }
   // メソッドの追加
   $.each(methods, function (key) {
-    console.log("each")
     $.validator.addMethod(key, this);
   });
   // バリデーションの実行
