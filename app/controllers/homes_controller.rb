@@ -26,7 +26,7 @@ class HomesController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    # @product.category.name
+
   end
 
   def edit

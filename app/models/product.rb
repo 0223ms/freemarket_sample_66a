@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   belongs_to :size, optional: true
   belongs_to :saler, class_name: "User"
   belongs_to :buyer, class_name: "User", optional: true
-  # belongs_to :brand
+
 
   
   validates :images, :category_id, :condition,:delivery_cost, :delivery_origin,:delivery_days,presence: true
