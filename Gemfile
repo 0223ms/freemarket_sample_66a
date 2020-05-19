@@ -74,6 +74,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'payjp'
+gem 'dotenv-rails'
+
 # gem 'therubyracer'
 
 gem 'pry-rails'
