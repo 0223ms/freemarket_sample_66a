@@ -21,24 +21,32 @@
     レディース新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   %h3.main-new-arrival__category#mens
     メンズ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   .main-new-arrival__category#home_electronics
     家電・スマホ・カメラ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   .main-new-arrival__category#toys
     おもちゃ・ホビー・グッズ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-popular
   .main-popular__title
@@ -56,22 +64,30 @@
     シャネル新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   .main-new-arrival__category#louisvuitton
     ルイヴィトン新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   .main-new-arrival__category#supreme
     シュプリーム新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
 .main-new-arrival
   .main-new-arrival__category#nike
     ナイキ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
+  - @last_name.each do |name|
+    =render partial: 'category_id', locals: {name: name}
 
