@@ -17,7 +17,6 @@ document.addEventListener(
             $("#cvc").removeAttr("name");
             $("#exp_month").removeAttr("name");
             $("#exp_year").removeAttr("name"); 
-            console.log(response.id)
             $("#card_token").append(
               $('<input type="hidden" name="payjp_token">').val(response.id)
             ); 

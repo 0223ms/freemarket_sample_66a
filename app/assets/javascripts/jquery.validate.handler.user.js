@@ -108,20 +108,7 @@ $(function () {
       "user[delivery_number]": {
         phone: true
       },
-      // card_number: {
-      //   required: true,
-      //   cardNumber: true
-      // },
-      // exp_month: {
-      //   valueNotEquals: ""
-      // },
-      // exp_year: {
-      //   valueNotEquals: ""
-      // },
-      // cvc: {
-      //   required: true,
-      //   cvc: true
-      // }
+    
     },
     // エラーメッセージの定義
     messages: {
@@ -199,20 +186,7 @@ $(function () {
       "user[delivery_number]": {
         phone: "フォーマットが不適切です"
       },
-      // card_number: {
-      //   required: "クレジットカード番号を入力してください",
-      //   cardNumber: "有効なクレジットカード番号を入力してください"
-      // },
-      // exp_month: {
-      //   valueNotEquals: "有効期限を選択してください"
-      // },
-      // exp_year: {
-      //   valueNotEquals: "有効期限を選択してください"
-      // },
-      // cvc: {
-      //   required: "セキュリティコードを入力してください",
-      //   cvc: "4桁もしくは3桁の番号を入力してください"
-      // }
+     
     },
     groups: { //グループ化
       exp_date: "exp_month exp_year"
