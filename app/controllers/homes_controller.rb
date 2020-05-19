@@ -29,6 +29,11 @@ class HomesController < ApplicationController
     # @product.category.name
   end
 
+  def edit
+    @product = Product.new
+    @product.images.new
+    @category_parent_array = Category.where(ancestry: nil)
+  end
 
   private
   def product_params

@@ -75,5 +75,7 @@ gem 'rmagick'
 gem 'active_hash'
 gem 'pry-rails'
 # gem 'therubyracer'
+
 gem 'pry-rails'
 gem 'mini_magick'
+

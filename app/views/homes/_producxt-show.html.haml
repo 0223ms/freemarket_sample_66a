@@ -69,4 +69,13 @@
                     = link_to "/", class: "optionalbtn__none" do
                       %i.fas.fa-flag
                       不適切な商品の通報
-         
+          .itemcober
+            - if  user_signed_in? && @product.user_id == current_user.id # ユーザーの商品の場合
+              .change__box
+                = link_to "商品の編集", "/homes/:id/edit", class: "homesedit"
+                %p.text-center or
+                = link_to "出品を再開する", "/", class: "homesedit"
+
+                = link_to "この商品を削除する", "/", class: "homesdelete"
+
+
