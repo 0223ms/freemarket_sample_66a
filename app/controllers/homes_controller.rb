@@ -1,7 +1,8 @@
 class HomesController < ApplicationController
 
   def index
-    
+    @name = Product.all.order(category_id: "DESC", id: "ASC")
+    @last_name = @name.last(3)
   end
 
 
