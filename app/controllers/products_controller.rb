@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: [:destroy, :update, :release, :suspension]
+  before_action :set_product, only: [:destroy, :update, :release, :suspension, :show]
 
 
   def index
