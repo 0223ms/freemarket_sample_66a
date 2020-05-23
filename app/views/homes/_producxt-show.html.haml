@@ -76,6 +76,8 @@
                 %p.text-center or
                 = link_to "出品を再開する", "/", class: "homesedit"
 
-                = link_to "この商品を削除する", "/", class: "homesdelete"
-
+                = link_to  mypage_index_path(@product), method: :delete, data: { confirm: "商品を削除します。よろしいですか？"} do
+                  .homesdelete
+                    この商品を削除する
+                
 
