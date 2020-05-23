@@ -51,11 +51,10 @@ class ProductsController < ApplicationController
   end   
 
   def show
-    # binding.pry
-    # @product.images
+
     @main_photo = @product.images[0]
     @prefecture = Prefecture.find(@product.delivery_origin.to_i)
-    # @category_grandchildren = @product.category
+
     
   end
 
