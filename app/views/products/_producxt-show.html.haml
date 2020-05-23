@@ -79,13 +79,13 @@
           .itemcober
             - if  user_signed_in? && @product.user_id == current_user.id # ユーザーの商品の場合
               .change__box
-                = link_to "商品の編集", "/homes/:id/edit", class: "homesedit"
+                = link_to "商品の編集", edit_home_path, class: "homesedit"
                 %p.text-center or
-                = link_to "出品を再開する", "/", class: "homesedit"
+                = link_to "出品を再開する", new_home_path, class: "homesedit"
 
-                = link_to "この商品を削除する", "/", class: "homesdelete"
+                = link_to "この商品を削除する", homes_path, class: "homesdelete"
 
             - else # ユーザーの商品ではない場合
-              = link_to "購入画面に進む  ", "/", class: "homesdelete"
+              = link_to "購入画面に進む  ", pay_purchase_index_path, class: "homesdelete"
               
                     
