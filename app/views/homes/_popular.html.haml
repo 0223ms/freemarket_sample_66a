@@ -21,73 +21,78 @@
     レディース新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+  .main-new-arrival__gazo
+     
+    - @products_ladies.each do |product|
+      = render partial: 'product_listing', locals: {product: product}
 
 .main-new-arrival
   %h3.main-new-arrival__category#mens
     メンズ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+  .main-new-arrival__gazo    
+    - @products_mens.each do |product|
+      = render partial: 'product_listing', locals: {product: product}
 
 .main-new-arrival
   .main-new-arrival__category#home_electronics
     家電・スマホ・カメラ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+  .main-new-arrival__gazo    
+    - @products_home_electronics.each do |product|
+      = render partial: 'product_listing', locals: {product: product}
 
 .main-new-arrival
   .main-new-arrival__category#toys
     おもちゃ・ホビー・グッズ新着アイテム
     .main-new-arrival__category__more
       もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+  .main-new-arrival__gazo    
+    - @products_toys.each do |product|
+      = render partial: 'product_listing', locals: {product: product}
 
-.main-popular
-  .main-popular__title
-    人気のブランド
-  = link_to "#chanel", class:"main-popular__tags" do
-    シャネル
-  = link_to "#louisvuitton", class:"main-popular__tags" do
-    ルイヴィトン
-  = link_to "#supreme", class:"main-popular__tags" do
-    シュプリーム
-  = link_to "#nike", class:"main-popular__tags" do
-    ナイキ
-.main-new-arrival
-  .main-new-arrival__category#chanel
-    シャネル新着アイテム
-    .main-new-arrival__category__more
-      もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+-# .main-popular
+-#   .main-popular__title
+-#     人気のブランド
+-#   = link_to "#chanel", class:"main-popular__tags" do
+-#     シャネル
+-#   = link_to "#louisvuitton", class:"main-popular__tags" do
+-#     ルイヴィトン
+-#   = link_to "#supreme", class:"main-popular__tags" do
+-#     シュプリーム
+-#   = link_to "#nike", class:"main-popular__tags" do
+-#     ナイキ
+-# .main-new-arrival
+-#   .main-new-arrival__category#chanel
+-#     シャネル新着アイテム
+-#     .main-new-arrival__category__more
+-#       もっと見る ＞
+-#   - @last_name.each do |name|
+-#     =render partial: 'category_id', locals: {name: name}
 
-.main-new-arrival
-  .main-new-arrival__category#louisvuitton
-    ルイヴィトン新着アイテム
-    .main-new-arrival__category__more
-      もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+-# .main-new-arrival
+-#   .main-new-arrival__category#louisvuitton
+-#     ルイヴィトン新着アイテム
+-#     .main-new-arrival__category__more
+-#       もっと見る ＞
+-#   - @last_name.each do |name|
+-#     =render partial: 'category_id', locals: {name: name}
 
-.main-new-arrival
-  .main-new-arrival__category#supreme
-    シュプリーム新着アイテム
-    .main-new-arrival__category__more
-      もっと見る ＞
-  - @last_name.each do |name|
-    =render partial: 'category_id', locals: {name: name}
+-# .main-new-arrival
+-#   .main-new-arrival__category#supreme
+-#     シュプリーム新着アイテム
+-#     .main-new-arrival__category__more
+-#       もっと見る ＞
+-#   - @last_name.each do |name|
+-#     =render partial: 'category_id', locals: {name: name}
 
-.main-new-arrival
-  .main-new-arrival__category#nike
-    ナイキ新着アイテム
-    .main-new-arrival__category__more
-      もっと見る ＞
-  - @last_name.each do |name|
+-# .main-new-arrival
+-#   .main-new-arrival__category#nike
+-#     ナイキ新着アイテム
+-#     .main-new-arrival__category__more
+-#       もっと見る ＞
+-#   - @last_name.each do |name|
     =render partial: 'category_id', locals: {name: name}
 

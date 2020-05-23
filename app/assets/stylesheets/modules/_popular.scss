@@ -1,7 +1,7 @@
 .main-top {
   background-color: #eeeeee;
   height: 390px;
-  width: 1440px;
+  // width: 1440px;
   &__banner {
     width: 100%;  
   }
@@ -36,9 +36,9 @@
   height: 490px;
   padding: 42px 210px 100px;
   position: relative;
-  :hover {
-    outline: solid 1px #0095ee;
-  }
+  // :hover {
+  //   outline: solid 1px #0095ee;
+  // }
   &__category {
     color: #333333;
     font-size: 24px;
@@ -66,38 +66,13 @@
     position: relative;
     font-weight: lighter;
     float: left;
-    margin: 6px;
+    margin: 15px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     &--image {
       height: 188px;
       overflow: hidden;
       pointer-events: none;
-      &__ribbon-sm > div {
-        font-size: 20px;
-        color: white;
-        position: absolute;
-        left: 0;
-        top: 18px;
-        z-index: 2;
-        transform: rotate(-45deg);
-        letter-spacing: 2px;
-        font-weight: 600;
-        pointer-events: none;
-      }
-      &__ribbon-sm::after {
-        border-width: 80px 80px 0 0;
-        border-color: #ea352d transparent transparent transparent;
-        display: block;
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        pointer-events: none;
-      }
+      outline: solid 1px #0095ee;
     }
     &--price {
       background: rgba(0,0,0,.4);
@@ -123,4 +98,11 @@
       pointer-events: none;
     } 
   }
+}
+
+.main-new-arrival__gazo{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
