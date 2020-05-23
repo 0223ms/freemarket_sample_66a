@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_one :card, dependent: :destroy
   has_one :sns_credential, dependent: :destroy
 
-  mount_uploader :icon, ImageUploader
+  # mount_uploader :icon, ImageUploader
   
 
   VALID_EMAIL_REGEX = /\A[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z/
