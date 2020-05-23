@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:destroy, :update, :release, :suspension,:show]
 
 
+
   def index
     @products_ladies = Product.where(category_id: 1..205).where.not(transaction_status: 2).order("created_at DESC").limit(10)
     @products_mens = Product.where(category_id: 206..350).where.not(transaction_status: 2).order("created_at DESC").limit(10)
