@@ -1,17 +1,17 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: [:destroy, :update, :release, :suspension, :show]
+  before_action :set_product, only: [:index, :destroy, :update, :release, :suspension, :show]
 
 
   def index
-    @products_ladies = Product.where(category_id: 1..205).where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_mens = Product.where(category_id: 206..350).where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_home_electronics = Product.where(category_id: 899..984).where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_toys = Product.where(category_id: 686..798).where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_chanel = Product.where(brand: "シャネル").where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_louis_vuitton = Product.where(brand: "ルイヴィトン").where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_supreme = Product.where(brand: "シュプリーム").where.not(transaction_status: 2).order("created_at DESC").limit(10)
-    @products_nike = Product.where(brand: "ナイキ").where.not(transaction_status: 2).order("created_at DESC").limit(10)
+    @products_ladies = Product.where(category_id: 1..205).order("created_at DESC").limit(10)
+    @products_mens = Product.where(category_id: 206..350).order("created_at DESC").limit(10)
+    @products_home_electronics = Product.where(category_id: 899..984).order("created_at DESC").limit(10)
+    @products_toys = Product.where(category_id: 686..798).order("created_at DESC").limit(10)
+    @products_chanel = Product.where(brand: "シャネル").order("created_at DESC").limit(10)
+    @products_louis_vuitton = Product.where(brand: "ルイヴィトン").order("created_at DESC").limit(10)
+    @products_supreme = Product.where(brand: "シュプリーム").order("created_at DESC").limit(10)
+    @products_nike = Product.where(brand: "ナイキ").order("created_at DESC").limit(10)
     @parents = Category.where(ancestry: nil)
     parent_id = params[:parent_id]
     @children = Category.find_by(parent_id).children
@@ -53,7 +53,7 @@ class ProductsController < ApplicationController
     @main_photo = @product.images[0]
     @prefecture = Prefecture.find(@product.delivery_origin.to_i)
     @category_grandchildren = @product.category
-    @product.category.name
+    # @product.category.name
   end
 
 

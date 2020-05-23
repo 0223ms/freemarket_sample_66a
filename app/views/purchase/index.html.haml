@@ -10,12 +10,12 @@
           .buy__inner
             .buy__item__box
               %h3.buy__item__image
-                = image_tag alt: "Rails icon", class: "image", width: "80px", height: "80px"
+                = image_tag @image.image, alt: "Rails icon", class: "image", width: "80px", height: "80px"
               .buy__item__detail
                 %p.buy__item__name
-                  = @product.category.name
+                  = @category_grandchildren
                 %p.buy__item__price
-                  -# = @product.price.to_s(:delimited, delimiter: ',')
+                  = @product.price.to_s(:delimited, delimiter: ',')
                   %span.item__shipping （税込）送料込み
         %section.buy__item
           .buy__inner
