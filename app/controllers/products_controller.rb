@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: [:index, :destroy, :update, :release, :suspension, :show]
+  before_action :set_product, only: [:destroy, :update, :release, :suspension,:show]
+
+
 
 
   def index
@@ -50,10 +52,10 @@ class ProductsController < ApplicationController
   end   
 
   def show
+
     @main_photo = @product.images[0]
     @prefecture = Prefecture.find(@product.delivery_origin.to_i)
-    @category_grandchildren = @product.category
-    # @product.category.name
+
   end
 
 
