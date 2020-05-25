@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   
 
   resources :products do
+    resources :purchase, only: [:index] 
     member do
       patch 'release'
       patch 'suspension'
