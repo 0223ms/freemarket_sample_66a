@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#index'
   resources :homes, only: [:new, :create, :show, :edit]
+  resources :categories ,only: :index
 
   root to: 'products#index'
   resources :signup do
@@ -43,6 +44,7 @@ Rails.application.routes.draw do
   
   root 'products#index'
   resources :products, except: :show
+  resources :categories ,only: :index
 
   resources :mypage do
     collection do
@@ -68,6 +70,12 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
+
+  
+  root "products#edit"
+  resources :products ,only: [:index,:new,:create,:edit]
+  resources :categories ,only: :index
+  
 
 
 

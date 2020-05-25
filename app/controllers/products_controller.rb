@@ -1,11 +1,12 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: [:destroy, :update, :release, :suspension,:show]
+  before_action :set_product, only: [:destroy, :update, :release, :suspension,:show,:edit]
 
 
 
 
   def index
+    @product = Product.all
     @products_ladies = Product.where(category_id: 1..205).order("created_at DESC").limit(10)
     @products_mens = Product.where(category_id: 206..350).order("created_at DESC").limit(10)
     @products_home_electronics = Product.where(category_id: 899..984).order("created_at DESC").limit(10)
@@ -111,11 +112,12 @@ class ProductsController < ApplicationController
     end
     # 親カテゴリで上記と同様の記述
     @selected_parent = @selected_child.parent
-    @category_parent_array = []
-    Category.find("#{@selected_parent.id}").siblings.each do |parent|
-      parent_hash = {id: "#{parent.id}", name: "#{parent.name}"}
-      @category_parent_array << parent_hash
-    end
+    @category_parent_array = Category.where(ancestry: nil)
+    # @category_parent_array = []
+    # Category.find("#{@selected_parent.id}").siblings.each do |parent|
+    #   parent_hash = {id: "#{parent.id}", name: "#{parent.name}"}
+    #   @category_parent_array << parent_hash
+    # end
     # サイズが登録されている場合
     if @selected_size = @product.size
       # 登録されているサイズに関連する、サイズ選択肢用の配列作成
@@ -131,8 +133,8 @@ class ProductsController < ApplicationController
 
   def update
     
-    if product.update(product_update_params) && product.user_id == current_user.id
-      redirect_to product_path(product), notice: '商品の編集が完了しました。'
+    if @product.update(product_update_params) && @product.user_id == current_user.id
+      redirect_to root_path(@product), notice: '商品の編集が完了しました。'
     else
       redirect_to edit_product_path(product), alert: '画像が無い為、更新ができませんでした。'
     end
@@ -168,6 +170,11 @@ class ProductsController < ApplicationController
 
   private
   def product_params
+    params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
+                                    :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
+  end
+
+  def product_update_params
     params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
                                     :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
   end

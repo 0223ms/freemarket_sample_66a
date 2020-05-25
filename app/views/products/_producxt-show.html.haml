@@ -79,7 +79,7 @@
           .itemcober
             - if  user_signed_in? && @product.user_id == current_user.id # ユーザーの商品の場合
               .change__box
-                = link_to "商品の編集", edit_home_path, class: "homesedit"
+                = link_to "商品の編集", edit_product_path, class: "homesedit"
                 %p.text-center or
                 = link_to "出品を再開する", new_home_path, class: "homesedit"
 

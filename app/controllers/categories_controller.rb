@@ -1,4 +1,4 @@
-class CategoryController < ApplicationController
+class CategoriesController < ApplicationController
   before_action :apply_gon
   before_action :set_parents
 
@@ -21,7 +21,5 @@ class CategoryController < ApplicationController
 
   def apply_gon
     gon.payjp_key = ENV["PAYJP_KEY"]
-  end
-
-end
+  end  
 
