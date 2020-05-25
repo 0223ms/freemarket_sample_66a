@@ -3,7 +3,8 @@ class PurchaseController < ApplicationController
   require 'payjp'
 
   def index
-    @product = Product.find(params[:id])
+    @product = Product.find(params[:product_id])
+    @image = @product.images
     card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?

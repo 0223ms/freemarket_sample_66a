@@ -39,7 +39,7 @@ class CardController < ApplicationController
 
   def show #Cardのデータpayjpに送り情報を取り出します
     @card = Card.find_by(user_id: current_user.id)
-    if card.blank?
+    if @card.blank?
       # redirect_to action: "new" 
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
