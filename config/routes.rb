@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#index'
-  resources :homes, only: [:new, :create, :show, :edit]
+  resources :homes, only: [:new, :create, :show, :edit,:destroy]
   resources :categories ,only: :index
 
   root to: 'products#index'
+  resources :products, only: [:new, :create, :show, :edit,:destroy]
   resources :signup do
     collection do
       get 'member'
@@ -54,7 +55,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products, only: [:index, :new, :create]
+  resources :products, only: [:index, :new, :create,:destroy]
   
   resources :purchase, only: [:index] do
     collection do

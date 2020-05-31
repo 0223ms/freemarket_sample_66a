@@ -47,6 +47,16 @@ class HomesController < ApplicationController
     @category_parent_array = Category.where(ancestry: nil)
   end
 
+  def destroy
+    
+    if @product.user_id == current_user.id && @product.destroy
+      redirect_to root_path, notice: '商品を削除しました。'
+    else
+      redirect_to edit_product_path, alert: '商品の削除に失敗しました。'
+    end
+  end  
+
+
   private
   def product_params
     params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
