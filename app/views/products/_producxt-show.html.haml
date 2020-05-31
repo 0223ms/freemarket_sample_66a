@@ -83,7 +83,8 @@
                 %p.text-center or
                 = link_to "出品を再開する", new_home_path, class: "homesedit"
 
-                = link_to "この商品を削除する", homes_path, class: "homesdelete"
+                = link_to "この商品を削除する", product_path(@product), method: :delete,class: "homesdelete"
+                
 
             - else # ユーザーの商品ではない場合
               = link_to "購入画面に進む  ", pay_card_index_path, class: "homesdelete"
