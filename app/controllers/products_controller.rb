@@ -31,7 +31,6 @@ class ProductsController < ApplicationController
   end
 
   def category_child
-
     @category_child = Category.find(params[:parent_id]).children
   end
 

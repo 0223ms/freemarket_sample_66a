@@ -83,7 +83,7 @@ $(function(){
   
     
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
-    console.log("こんにちは")
+    console.log(parentCategory)
     if (parentCategory != ""){ //親カテゴリーが初期値でないことを確認
       
       $.ajax({
@@ -93,7 +93,7 @@ $(function(){
         dataType: 'json'
       })
       .done(function(children){
-        
+        console.log("test")
         $('#child_wrapper').remove(); //親が変更された時、子以下を削除する
         $('#grandchild_wrapper').remove();
         $('#size_wrapper').remove();

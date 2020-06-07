@@ -4,25 +4,8 @@ Rails.application.routes.draw do
   resources :homes, only: [:new, :create, :show, :edit,:destroy]
   resources :categories ,only: :index
 
+
   root to: 'products#index'
-  resources :products, only: [:new, :create, :show, :edit,:destroy]
-  resources :signup do
-    collection do
-      get 'member'
-      post 'phonenumber'
-      post 'addressinformation'
-      post 'completed'
-    end
-  end
-  
-
-  resources :users do
-    collection do
-      get 'login'
-    end
-  end
-  
-
   resources :products do
     resources :purchase, only: [:index] do
       collection do
@@ -41,6 +24,25 @@ Rails.application.routes.draw do
       get 'delivery_way'
     end
   end
+  resources :products, only: [:new, :create, :show, :edit,:destroy]
+  resources :signup do
+    collection do
+      get 'member'
+      post 'phonenumber'
+      post 'addressinformation'
+      post 'completed'
+    end
+  end
+  
+
+  resources :users do
+    collection do
+      get 'login'
+    end
+  end
+  
+
+
 
   resources :category do
     collection do
