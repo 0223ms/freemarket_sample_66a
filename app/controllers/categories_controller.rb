@@ -22,4 +22,5 @@ class CategoriesController < ApplicationController
   def apply_gon
     gon.payjp_key = ENV["PAYJP_KEY"]
   end  
+end
 
