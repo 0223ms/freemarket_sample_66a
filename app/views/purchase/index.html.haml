@@ -58,7 +58,7 @@
                   登録してください 
             %section.buy__content
 
-              = link_to done_product_purchase_index_path(@product) do
+              = link_to pay_purchase_index_path(product_id: @product.id), method: :post do
                 %button.buy__btn{type:"submit"}  購入する
     = render 'layouts/second_footer'
 
