@@ -32,6 +32,7 @@ $(function () {
   });
   // バリデーションの実行
   $("#signup-form, #charge-form").validate({
+
     // ルール設定
     rules: {
       "user[nickname]": {

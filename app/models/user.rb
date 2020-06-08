@@ -37,7 +37,7 @@ class User < ApplicationRecord
   validates :birth_month,             presence: true
   validates :birth_day,               presence: true
   validates :phone_number,                    uniqueness: true
-  validates :destination_firstname,                presence: true
+  validates :destination_firstname,                presence: true, on: :new
   validates :destination_lastname,               presence: true
   validates :destination_firstname_kana,           presence: true
   validates :destination_lastname_kana,          presence: true

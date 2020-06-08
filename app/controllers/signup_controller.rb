@@ -68,7 +68,7 @@ class SignupController < ApplicationController
 
       # render '/signup/completed'
 
-      render :index
+      render :addressinformation
 
     end
   end

@@ -7,6 +7,9 @@
       住所情報入力
     .contents
       = form_for(@user, url: completed_signup_index_path, method: :post, html: {class: "address-form", id: "signup-form"}) do |f|
+        - @user.errors.full_messages.each do |message|
+          %p#destination_firstname-error.invalid 
+            = message
         .address__main.form
           = f.label :fullname, "お名前（全角）", class: "address__main__label" 
           %span.address__main__require 必須
@@ -14,7 +17,6 @@
             = f.text_field :destination_firstname, class: "address__main__input--hurf", placeholder:"例）山田", id: "destination_firstname"
             = f.text_field :destination_lastname, class: "address__main__input--hurf", placeholder:"例）彩", id: "destination_lastname"
           #name_error
-
         .address__main.form
           = f.label :fullname, "お名前カナ（全角）", class: "address__main__label" 
           %span.address__main__require 必須
