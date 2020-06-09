@@ -45,7 +45,7 @@ class User < ApplicationRecord
   validates :prefectures,             presence: true
   validates :city,               presence: true
   validates :address,             presence: true
-  validates :room_number,                    uniqueness: true
-  validates :delivery_number,                    uniqueness: true
+#   validates :room_number,                    uniqueness: true
+#   validates :delivery_number,                    uniqueness: true
 
 end

@@ -104,11 +104,11 @@ $(function () {
       },
       "user[address]": {
         required: true
-      },
-      "user[room_number]": {},
-      "user[delivery_number]": {
-        phone: true
-      },
+      }
+      // "user[room_number]": {},
+      // "user[delivery_number]": {
+      //   phone: true
+      // },
     
     },
     // エラーメッセージの定義
@@ -182,11 +182,11 @@ $(function () {
       },
       "user[address]": {
         required: "番地を入力してください"
-      },
-      "user[room_number]": {},
-      "user[delivery_number]": {
-        phone: "フォーマットが不適切です"
-      },
+      }
+      // "user[room_number]": {},
+      // "user[delivery_number]": {
+      //   phone: "フォーマットが不適切です"
+      // },
      
     },
     groups: { //グループ化
@@ -235,7 +235,7 @@ $(function () {
   $("#phone_number").blur(function () {
     $(this).valid();
   });
-  $("#destination_firstname, #destination_lastname, #destination_firstname_kana, #destination_lastname_kana, #postal_code, #user_address_attributes_prefectures, #city, #address, #room_number, #delivery_number").blur(function () {
+  $("#destination_firstname, #destination_lastname, #destination_firstname_kana, #destination_lastname_kana, #postal_code, #user_address_attributes_prefectures, #city, #address).blur(function () {
     $(this).valid();
   });
   $("#card_number, #exp_month, #exp_year, #cvc").blur(function () {
