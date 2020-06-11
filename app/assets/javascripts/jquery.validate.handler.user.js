@@ -235,7 +235,7 @@ $(function () {
   $("#phone_number").blur(function () {
     $(this).valid();
   });
-  $("#destination_firstname, #destination_lastname, #destination_firstname_kana, #destination_lastname_kana, #postal_code, #user_address_attributes_prefectures, #city, #address).blur(function () {
+  $("#destination_firstname, #destination_lastname, #destination_firstname_kana, #destination_lastname_kana, #postal_code, #user_address_attributes_prefectures, #city, #address").blur(function () {
     $(this).valid();
   });
   $("#card_number, #exp_month, #exp_year, #cvc").blur(function () {

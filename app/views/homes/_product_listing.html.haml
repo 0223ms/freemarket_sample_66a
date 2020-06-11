@@ -3,9 +3,9 @@
     .main-new-arrival__product--image
       - product.images.each do |image|
         = image_tag image.image, class: "main-new-arrival__product--image--first", size: "200x200"
-      -# - if product.sales_states == 1 # 売り切れの場合
-      -#   .main-new-arrival__product--image__ribbon-sm
-      -#     SOLD
+      - if product.sales_states == 2 # 売り切れの場合
+        .main-new-arrival__product--image__ribbon-sm
+          SOLD
 
     .main-new-arrival__product--price
       ¥

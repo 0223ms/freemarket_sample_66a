@@ -29,6 +29,7 @@ class PurchaseController < ApplicationController
     :customer => @card.customer_id, #顧客ID
     :currency => 'jpy', #日本円
   )
+  @product.update(sales_states: 2)
   redirect_to done_purchase_index_path(product_id: @product.id) #完了画面に移動
   end
 

@@ -141,13 +141,13 @@ class ProductsController < ApplicationController
 
   def release
     
-    product.update(transaction_status: "0")
+    product.update(sales_states: "1")
     redirect_to product_path(product), notice: '出品の再開をしました。'
   end
 
   def suspension
     
-    product.update(transaction_status: "2")
+    product.update(sales_states: "2")
     redirect_to product_path(product), notice: '出品の一旦停止をしました。'
   end
 
@@ -170,12 +170,12 @@ class ProductsController < ApplicationController
   private
   def product_params
     params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
-                                    :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
+                                    :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id).merge(sales_states: 1)
   end
 
   def product_update_params
     params.require(:product).permit(:name, :description, :condition, :delivery_cost, :delivery_origin, :delivery_days, :price,
-                                    :category_id, :brand_id, :size_id, :buyer_id, images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
+                                    :category_id, :brand_id, :size_id, :buyer_id,  images_attributes: [:id, :image] ).merge(user_id: current_user.id).merge(saler_id: current_user.id)
   end
 
   def set_product
