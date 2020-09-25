@@ -69,15 +69,12 @@ gem 'devise'
 gem 'font-awesome-sass'
 gem 'owlcarousel-rails'
 gem 'ancestry'
-gem 'carrierwave'
 gem 'rmagick'
 gem 'active_hash'
-gem 'pry-rails'
 gem 'payjp'
 gem 'dotenv-rails'
 
 # gem 'therubyracer'
 
-gem 'pry-rails'
 gem 'mini_magick'
 
