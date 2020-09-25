@@ -5,12 +5,8 @@ RUN apt-get update -qq && \
   libpq-dev \        
   nodejs           
 
-RUN mkdir /freemarket_sample_66a
-ENV APP_ROOT /freemarket_sample_66a.pem
-WORKDIR $APP_ROOT
+WORKDIR /freemarket_sample_66a
 
-ADD ./Gemfile $APP_ROOT/Gemfile
-ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
+COPY Gemfile Gemfile.lock /freemarket_sample_66a
 
 RUN bundle install
-ADD . $APP_ROOT 
