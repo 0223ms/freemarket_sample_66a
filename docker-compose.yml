@@ -10,11 +10,10 @@ version: '3'
 
     web:
       build: .
-      ports:
-        - '3000:3000'
+      command: rails s -p 3000 -b '0.0.0.0'
       volumes:
-        - '.:/freemarket_sample_66a'
-      tty: true
-      stdin_open: true
+        - .:/freemarket_sample_66a
+      ports:
+        - "3000:3000"
       links:
         - db
