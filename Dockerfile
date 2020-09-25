@@ -7,6 +7,6 @@ RUN apt-get update -qq && \
 
 WORKDIR /freemarket_sample_66a
 
-COPY Gemfile Gemfile.lock /freemarket_sample_66a
+COPY Gemfile Gemfile.lock /freemarket_sample_66a/
 
 RUN bundle install
