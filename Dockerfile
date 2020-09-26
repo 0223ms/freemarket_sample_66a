@@ -1,10 +1,16 @@
-FROM ruby:2.5
+FROM ruby:2.5.1
 
 RUN apt-get update -qq && \
   apt-get install -y build-essential \ 
   libpq-dev \        
   nodejs           
 
-WORKDIR /freemarket_sample_66a
-COPY Gemfile Gemfile.lock /freemarket_sample_66a/
-RUN gem install bundler 
+RUN mkdir /freemarket_sample_66a
+ENV APP_ROOT /freemarket_sample_66a
+WORKDIR $APP_ROOT
+
+ADD ./Gemfile $APP_ROOT/Gemfile
+ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
+
+RUN bundle install
+ADD . $APP_ROOT
