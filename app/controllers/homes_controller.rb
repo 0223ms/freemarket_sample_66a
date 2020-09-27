@@ -11,7 +11,7 @@ class HomesController < ApplicationController
     @products_nike = Product.where(brand: "ナイキ").order("created_at DESC").limit(10)
     @parents = Category.where(ancestry: nil)
     parent_id = params[:parent_id]
-    @children = Category.find_by(parent_id).children
+    # @children = Category.find_by(parent_id).children
 
     # @product=Product.images
   end
